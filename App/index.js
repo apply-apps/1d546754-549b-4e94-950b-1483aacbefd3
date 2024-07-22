@@ -1,6 +1,5 @@
 // Filename: index.js
 // Combined code from all files
-
 import React, { useState } from 'react';
 import { SafeAreaView, StyleSheet, Text, ScrollView, View, TextInput, Button } from 'react-native';
 
@@ -28,7 +27,7 @@ const WorkoutTracker = () => {
     };
 
     return (
-        <View style={styles.workoutTrackerContainer}>
+        <View style={styles.container}>
             {exercises.map((exercise) => (
                 <View key={exercise.id} style={styles.exerciseContainer}>
                     <Text style={styles.exerciseText}>{exercise.name}</Text>
@@ -61,17 +60,6 @@ const WorkoutTracker = () => {
     );
 };
 
-export default function App() {
-    return (
-        <SafeAreaView style={styles.container}>
-            <Text style={styles.title}>Workout Tracker</Text>
-            <ScrollView contentContainerStyle={styles.scrollContainer}>
-                <WorkoutTracker />
-            </ScrollView>
-        </SafeAreaView>
-    );
-}
-
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -87,13 +75,6 @@ const styles = StyleSheet.create({
     scrollContainer: {
         alignItems: 'center',
         paddingBottom: 20,
-    },
-    workoutTrackerContainer: {
-        width: '90%',
-        backgroundColor: '#fff',
-        padding: 20,
-        borderRadius: 10,
-        alignItems: 'center',
     },
     exerciseContainer: {
         marginBottom: 20,
@@ -114,3 +95,14 @@ const styles = StyleSheet.create({
         marginBottom: 10,
     },
 });
+
+export default function App() {
+    return (
+        <SafeAreaView style={styles.container}>
+            <Text style={styles.title}>Workout Tracker</Text>
+            <ScrollView contentContainerStyle={styles.scrollContainer}>
+                <WorkoutTracker />
+            </ScrollView>
+        </SafeAreaView>
+    );
+}
